@@ -1,0 +1,169 @@
+_type: export
+__export_format: 4
+__export_date: 2023-08-18T23:27:32.489Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_ba22eab28111427a875f19186d36a31d
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692328708302
+    created: 1692324367107
+    url: http://127.0.0.1:3000/login
+    name: valid login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "testuser",
+        	"password": "testpassword"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1692324367107
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_983e0f9dc5334413ae196218ca5282d1
+    parentId: null
+    modified: 1692324342715
+    created: 1692324342715
+    name: flask-auth-experiment
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_82b2d86265734645bdd90a260ce5c3e7
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692328691035
+    created: 1692328683894
+    url: http://127.0.0.1:3000/login
+    name: invalid login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "fakeuser",
+        	"password": "wrongpassword"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1689342644286
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_db1a21dba87e491586f455b2a92f277c
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692400853929
+    created: 1692400776038
+    url: http://127.0.0.1:3000/inspect
+    name: inspect token
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_ba22eab28111427a875f19186d36a31d',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    metaSortKey: -1689342644261
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_589b949289e34c0fae16e12f73e87636
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692328840838
+    created: 1692328752514
+    url: http://127.0.0.1:3000/user
+    name: user profile
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_ba22eab28111427a875f19186d36a31d',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    metaSortKey: -1689342644236
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_52dcf09794994ae7bce8f2e9e9033a6b
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692400759985
+    created: 1692331942349
+    url: http://127.0.0.1:3000/user
+    name: invalid auth
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjkyMzk2NTYxLCJqdGkiOiI0YzFkNmViYi1lNjU1LTRjYzAtOWU3NS0yYTNiNTI3YjM4ODIiLCJ0eXBlIjoiYWNjZXNzIiwidXNlciI6InRlc3R1c2VyIiwibmJmIjoxNjkyMzk2NTYxLCJleHAiOjE2OTI0MDM3NjF9.SsU0xIFSWlXi9or8vjvJXJ2xxX7Gk9BRFVowjCUAFak
+      disabled: true
+    metaSortKey: -1687851782850.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_f4e69ecd07b87812ce87f0198da423f4dc0db9be
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692324342726
+    created: 1692324342726
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1692324342726
+    _type: environment
+  - _id: jar_f4e69ecd07b87812ce87f0198da423f4dc0db9be
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692324342729
+    created: 1692324342729
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_f561792e01984e1c9abdc2011cdff045
+    parentId: wrk_983e0f9dc5334413ae196218ca5282d1
+    modified: 1692324342716
+    created: 1692324342716
+    fileName: flask-auth-experiment
+    contents: ""
+    contentType: yaml
+    _type: api_spec
